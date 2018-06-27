@@ -7,3 +7,6 @@
 [submodule "zsh/kube-ps1"]
 	path = zsh/kube-ps1
 	url = https://github.com/jonmosco/kube-ps1.git
+[submodule "/home/marius/.dotfiles/vim/bundle/Vundle.vim"]
+	path = /home/marius/.dotfiles/vim/bundle/Vundle.vim
+	url = https://github.com/VundleVim/Vundle.vim.git

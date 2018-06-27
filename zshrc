@@ -14,6 +14,9 @@ HISTSIZE=1000
 SAVEHIST=1000
 bindkey -e
 # End of lines configured by zsh-newuser-install
+export EDITOR="vi"
+export VISUAL="vi"
+export PAGER="less"
 [[ $- = *i* ]] && [[ -d ~/.zsh/liquidprompt ]] && source ~/.zsh/liquidprompt/liquidprompt
 [[ $- = *i* ]] && [[ -d ~/.zsh/kube-ps1 ]] && source ~/.zsh/kube-ps1/kube-ps1.sh
-LP1_PS1_PREFIX=$kube_ps1
+#LP1_PS1_PREFIX=$kube_ps1
