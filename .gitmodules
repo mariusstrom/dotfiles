@@ -1,0 +1,9 @@
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot
+[submodule "zsh/liquidprompt"]
+	path = zsh/liquidprompt
+	url = https://github.com/nojhan/liquidprompt
+[submodule "zsh/kube-ps1"]
+	path = zsh/kube-ps1
+	url = https://github.com/jonmosco/kube-ps1.git
