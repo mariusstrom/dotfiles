@@ -21,5 +21,6 @@ setopt AUTO_CD
 [[ $- = *i* ]] && [[ -d ~/.zsh/liquidprompt ]] && source ~/.zsh/liquidprompt/liquidprompt
 [[ $- = *i* ]] && [[ -d ~/.zsh/kube-ps1 ]] && source ~/.zsh/kube-ps1/kube-ps1.sh && LP1_PS1_PREFIX=$kube_ps1
 [[ -d ~/.local/bin ]] && export PATH=$PATH:~/.local/bin
+# https://esc.sh/blog/ssh-agent-windows10-wsl2/
 [[ -x /usr/bin/keychain ]] && [[ -f $HOME/.ssh/id_rsa ]] && /usr/bin/keychain --nogui $HOME/.ssh/id_rsa
 [[ -x /usr/bin/keychain ]] && [[ -f $HOME/.keychain/$HOST-sh ]] && source $HOME/.keychain/$HOST-sh
