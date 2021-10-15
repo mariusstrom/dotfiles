@@ -6,6 +6,7 @@
 
 - link:
         ~/.dotfiles: ''
+        ~/.poshthemes: 
         ~/.vim:
         ~/.vimrc:
         ~/.zsh:

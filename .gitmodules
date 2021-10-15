@@ -22,3 +22,6 @@
 [submodule "vim/bundle/Vim-colors-solarized"]
 	path = vim/bundle/Vim-colors-solarized
 	url = https://github.com/altercation/Vim-colors-solarized.git
+[submodule "zsh/oh-my-posh"]
+	path = zsh/oh-my-posh
+	url = https://github.com/JanDeDobbeleer/oh-my-posh/
