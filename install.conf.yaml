@@ -11,7 +11,7 @@
         ~/.vimrc:
         ~/.zsh:
         ~/.zshrc:
-        ~/.config: 
+        # ~/.config: 
         ~/.gitconfig:
         ~/.tmux.conf:
 
