@@ -1,27 +1,9 @@
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
-[submodule "zsh/liquidprompt"]
-	path = zsh/liquidprompt
-	url = https://github.com/nojhan/liquidprompt
-[submodule "zsh/kube-ps1"]
-	path = zsh/kube-ps1
-	url = https://github.com/jonmosco/kube-ps1.git
-[submodule "vim/bundle/Vundle.vim"]
-	path = vim/bundle/Vundle.vim
-	url = https://github.com/VundleVim/Vundle.vim.git
-[submodule "vim/bundle/vim-gitgutter"]
-	path = vim/bundle/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter.git
-[submodule "vim/bundle/vim-airline-themes"]
-	path = vim/bundle/vim-airline-themes
-	url = https://github.com/vim-airline/vim-airline-themes.git
-[submodule "vim/bundle/vim-airline"]
-	path = vim/bundle/vim-airline
-	url = https://github.com/vim-airline/vim-airline.git
-[submodule "vim/bundle/Vim-colors-solarized"]
-	path = vim/bundle/Vim-colors-solarized
-	url = https://github.com/altercation/Vim-colors-solarized.git
 [submodule "zsh/oh-my-posh"]
 	path = zsh/oh-my-posh
 	url = https://github.com/JanDeDobbeleer/oh-my-posh/
+[submodule "zsh/zsh"]
+	path = zsh/zsh
+	url = https://github.com/dracula/zsh.git
