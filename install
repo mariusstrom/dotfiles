@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 set -e
+curl -s https://ohmyposh.dev/install.sh | bash -s -- -d dotfiles/zsh/oh-my-posh
 
 CONFIG="install.conf.yaml"
 DOTBOT_DIR="dotbot"
