@@ -7,10 +7,9 @@
 - link:
         ~/.dotfiles: ''
         ~/.poshthemes: 
-        ~/.vim:
         ~/.vimrc:
-        ~/.zsh:
         ~/.zshrc:
+        ~/.zsh:
         # ~/.config: 
         ~/.gitconfig:
         ~/.tmux.conf:
