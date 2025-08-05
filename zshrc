@@ -25,7 +25,6 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # run oh-my-posh dependent on host configuration
 [[ $- = *i* ]] && [[ -x ~/.zsh/oh-my-posh/oh-my-posh ]] && eval "$(~/.zsh/oh-my-posh/oh-my-posh init zsh --config ~/.poshthemes/dracula.omp.json)"
 [[ $- = *i* ]] && [[ -x /opt/homebrew/bin/oh-my-posh ]] &&  eval "$(oh-my-posh init zsh --config dracula)"
-#[[ $- = *i* ]] && [[ -d ~/.zsh/kube-ps1 ]] && source ~/.zsh/kube-ps1/kube-ps1.sh && LP1_PS1_PREFIX=$kube_ps1
 [[ -d ~/.local/bin ]] && export PATH=$PATH:~/.local/bin
 [[ -d /usr/local/bin ]] && export PATH=$PATH:/usr/local/bin
 
