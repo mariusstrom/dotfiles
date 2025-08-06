@@ -1,57 +1,61 @@
-# The following lines were added by compinstall
+# =============================
+# Zsh Configuration
+# =============================
 
+# ---- Completion ----
+autoload -Uz compinit
+compinit
 zstyle ':completion:*' completer _expand _complete _ignored
 zstyle ':completion:*' matcher-list ''
 zstyle ':completion:*' max-errors 1 numeric
 zstyle :compinstall filename '/home/marius/.zshrc'
+COMPLETION_WAITING_DOTS="true"
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-# Lines configured by zsh-newuser-install
+# ---- History ----
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
+
+# ---- Keybindings ----
 bindkey -e
-# End of lines configured by zsh-newuser-install
+
+# ---- Environment ----
 export EDITOR="vi"
 export VISUAL="vi"
 export PAGER="less"
-# Uncomment one of the following lines to change the auto-update behavior
-#zstyle ':omz:update' mode disabled  # disable automatic updates
-zstyle ':omz:update' mode auto      # update automatically without asking
-#zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
-# run oh-my-posh dependent on host configuration
-[[ $- = *i* ]] && [[ -x ~/.zsh/oh-my-posh/oh-my-posh ]] && eval "$(~/.zsh/oh-my-posh/oh-my-posh init zsh --config ~/.poshthemes/dracula.omp.json)"
-[[ $- = *i* ]] && [[ -x /opt/homebrew/bin/oh-my-posh ]] &&  eval "$(oh-my-posh init zsh --config dracula)"
-[[ -d ~/.local/bin ]] && export PATH=$PATH:~/.local/bin
-[[ -d /usr/local/bin ]] && export PATH=$PATH:/usr/local/bin
+# ---- PATH ----
+for dir in ~/.local/bin /usr/local/bin; do
+  [[ -d $dir ]] && export PATH=$PATH:$dir
+done
 
-# https://esc.sh/blog/ssh-agent-windows10-wsl2/
-[[ -x /usr/bin/keychain ]] && [[ -f $HOME/.ssh/id_rsa ]] && /usr/bin/keychain --nogui $HOME/.ssh/id_rsa
-[[ -x /usr/bin/keychain ]] && [[ -f $HOME/.keychain/$HOST-sh ]] && source $HOME/.keychain/$HOST-sh
+# ---- Oh My Posh ----
+if [[ $- = *i* ]]; then
+  if [[ -x ~/.zsh/oh-my-posh/oh-my-posh ]]; then
+    # we're on a raspbian system probably
+    eval "$(~/.zsh/oh-my-posh/oh-my-posh init zsh --config ~/.poshthemes/dracula.omp.json)"
+  elif [[ -x /opt/homebrew/bin/oh-my-posh ]]; then
+    # we're on a macOS system probably
+    eval "$(oh-my-posh init zsh --config dracula)"
+  fi
+fi
 
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
+# ---- SSH Keychain ----
+if [[ -x /usr/bin/keychain ]]; then
+  [[ -f $HOME/.ssh/id_rsa ]] && /usr/bin/keychain --nogui $HOME/.ssh/id_rsa
+  [[ -f $HOME/.keychain/$HOST-sh ]] && source $HOME/.keychain/$HOST-sh
+fi
 
-# Uncomment the following line to display red dots whilst waiting for completion.
-# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-COMPLETION_WAITING_DOTS="true"
+# ---- Oh My Zsh ----
+# Uncomment to adjust update behavior
+# zstyle ':omz:update' mode disabled
+zstyle ':omz:update' mode auto
+# zstyle ':omz:update' mode reminder
 
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
+# ---- Optional Settings ----
+# DISABLE_MAGIC_FUNCTIONS="true"  # Fix pasting issues
+# HIST_STAMPS="yyyy-mm-dd"        # History timestamps
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
+# ---- Plugins ----
+# plugins=(git rails textmate ruby lighthouse)

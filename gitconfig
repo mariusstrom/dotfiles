@@ -1,9 +1,96 @@
 [user]
 	email = marius@thestroms.org
 	name = Marius Strom
-[credential]
-	helper = cache
-[credential "https://github.com"]
-	username = mariusstrom
+[core]
+	editor = vim
+	autocrlf = input
+	excludesfile = ~/.gitignore_global
+	pager = less -FRX
+	preloadindex = true
+	fscache = true
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
+[push]
+	default = simple
+	autoSetupRemote = true
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+
 [diff]
-	submodule = log
+    submodule = log
+    tool = vimdiff
+    algorithm = patience
+
+[status]
+    showUntrackedFiles = all
+    submoduleSummary = true
+
+[branch]
+    autosetupmerge = always
+    autosetuprebase = always
+
+[rebase]
+    autoStash = true
+    autoSquash = true
+
+[fetch]
+    prune = true
+    pruneTags = true
+
+[log]
+    abbrevCommit = true
+    follow = true
+
+[color]
+    ui = auto
+    branch = auto
+    diff = auto
+    status = auto
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+# Useful aliases
+[alias]
+    st = status
+    ci = commit
+    co = checkout
+    br = branch
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    visual = !gitk
+    lg = log --oneline --graph --decorate --all
+    lol = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    patch = !git --no-pager diff --no-color
+    
+    # GitHub-specific aliases
+    pr = "!f() { git fetch origin pull/$1/head:pr-$1 && git checkout pr-$1; }; f"
+    cleanup = "!git branch --merged | grep -v '\\*\\|main\\|master\\|develop' | xargs -n 1 git branch -d"
+
+# SSH-specific settings
+[url "git@github.com:"]
+    insteadOf = https://github.com/
+    
+# Submodule settings
+[submodule]
+    recurse = true
+
+# GitHub-specific settings
+[github]
+    user = mariusstrom
