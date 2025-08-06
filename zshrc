@@ -46,16 +46,7 @@ if [[ -x /usr/bin/keychain ]]; then
   [[ -f $HOME/.keychain/$HOST-sh ]] && source $HOME/.keychain/$HOST-sh
 fi
 
-# ---- Oh My Zsh ----
-# Uncomment to adjust update behavior
-# zstyle ':omz:update' mode disabled
-zstyle ':omz:update' mode auto
-# zstyle ':omz:update' mode reminder
-
 # ---- Optional Settings ----
 # DISABLE_MAGIC_FUNCTIONS="true"  # Fix pasting issues
 # HIST_STAMPS="yyyy-mm-dd"        # History timestamps
 # ZSH_CUSTOM=/path/to/new-custom-folder
-
-# ---- Plugins ----
-# plugins=(git rails textmate ruby lighthouse)
