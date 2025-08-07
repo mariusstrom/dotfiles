@@ -46,6 +46,11 @@ if [[ -x /usr/bin/keychain ]]; then
   [[ -f $HOME/.keychain/$HOST-sh ]] && source $HOME/.keychain/$HOST-sh
 fi
 
+# ---- iTerm2 Shell Integration ----
+if [[ -f $HOME/.iterm2_shell_integration.zsh ]]; then
+  source $HOME/.iterm2_shell_integration.zsh
+fi
+
 # ---- Optional Settings ----
 # DISABLE_MAGIC_FUNCTIONS="true"  # Fix pasting issues
 # HIST_STAMPS="yyyy-mm-dd"        # History timestamps
