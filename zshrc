@@ -25,7 +25,7 @@ export VISUAL="vi"
 export PAGER="less"
 
 # ---- PATH ----
-for dir in ~/.local/bin /usr/local/bin; do
+for dir in ~/node_modules/.bin ~/.local/bin /usr/local/bin; do
   [[ -d $dir ]] && export PATH=$PATH:$dir
 done
 
