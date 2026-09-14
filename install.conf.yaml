@@ -6,14 +6,10 @@
 
 - link:
         ~/.dotfiles: ''
-        ~/.poshthemes: 
         ~/.vimrc:
         ~/.zshrc:
-        ~/.zsh:
         # ~/.config: 
         ~/.gitconfig:
-        ~/.tmux.conf:
-        ~/.vim:
 
 - shell:
           - [git submodule update --init --recursive, Installing submodules]

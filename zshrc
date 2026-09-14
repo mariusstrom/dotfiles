@@ -40,10 +40,9 @@ if [[ $- = *i* ]]; then
   fi
 fi
 
-# ---- SSH Keychain ----
-if [[ -x /usr/bin/keychain ]]; then
-  [[ -f $HOME/.ssh/id_rsa ]] && /usr/bin/keychain --nogui $HOME/.ssh/id_rsa
-  [[ -f $HOME/.keychain/$HOST-sh ]] && source $HOME/.keychain/$HOST-sh
+# ---- keychain ----
+if [[ -x /usr/bin/ssh-add ]]; then
+	[[ -f $HOME/.ssh/id_ed25519 ]] && /usr/bin/ssh-add --apple-load-keychain -q
 fi
 
 # ---- iTerm2 Shell Integration ----
