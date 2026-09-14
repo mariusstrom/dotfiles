@@ -31,12 +31,12 @@ done
 
 # ---- Oh My Posh ----
 if [[ $- = *i* ]]; then
-  if [[ -x ~/.local/bin/oh-my-posh/oh-my-posh ]]; then
+  if [[ -x ~/.local/bin/oh-my-posh ]]; then
     # we're on a raspbian system probably
-    eval "$(~/.local/bin/oh-my-posh/oh-my-posh init zsh --config dracula)"
+    eval "$(~/.local/bin/oh-my-posh init zsh --config iterm2)"
   elif [[ -x /opt/homebrew/bin/oh-my-posh ]]; then
     # we're on a macOS system probably
-    eval "$(oh-my-posh init zsh --config dracula)"
+    eval "$(oh-my-posh init zsh --config iterm2)"
   fi
 fi
 
